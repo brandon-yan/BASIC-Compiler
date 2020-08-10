@@ -1,0 +1,8 @@
+1 REM op_3.txt
+2 REM input: 4 6
+3 REM return value: 53
+4 INPUT x, y
+5 IF ((x < y) && (x + 5 >= y)) THEN 7
+6 LET x = x + 2
+7 LET y = y + 1
+8 EXIT x + y * y

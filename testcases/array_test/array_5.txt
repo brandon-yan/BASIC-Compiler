@@ -1,0 +1,12 @@
+1 REM array_5.txt
+2 REM input: 6 2  3
+3 REM return value: 25
+4 INPUT N
+5 INPUT i, j
+6 LET arr =  INT[N]
+7 LET arr[i / (j + 2 / 5 - i * 3)+ (j - (i  * j)/j)] = i +  j *  3 - i * j
+8 REM arr[1] = 5
+9 LET arr[i * j - i] = i * 2 + j  * 3
+10 REM arr[4] = 13
+14 LET arr[2] = 7
+16 EXIT arr[i] + arr[i * 2] + arr[j - i]

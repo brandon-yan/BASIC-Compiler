@@ -1,0 +1,9 @@
+1 REM sema_3.txt
+2 REM input:
+3 REM return value: 0
+4 IF 2 > 1 THEN 10
+5 REM it is a strange testcase
+6 REM  but I like it
+9 REM haha
+10 REM  after the biggest line
+11 REM Then EXIT 0!

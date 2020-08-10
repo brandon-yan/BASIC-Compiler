@@ -1,0 +1,7 @@
+1 REM sema_1.txt
+2 REM input: 
+3 REM return value: FAIL
+4 LET n = 0, m = 1
+5 LET ret = N * m
+6 EXIT ret 
+7 REM undefined variable

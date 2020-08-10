@@ -1,0 +1,21 @@
+1 REM control_5.txt
+2 REM input: 5
+3 REM return value: 10 
+4 INPUT n
+5 LET a = 1
+6 LET b = 1
+7 LET c = 1
+8 LET d = 1
+9 LET sum = 0
+10 FOR a = a + 1; a <= n
+11 LET b = a
+12 FOR b = b + 1; b <= n
+13 LET c = b
+14 FOR c = c + 1; c <= n
+15  IF a != b && b != c && a != c THEN 17
+16  GOTO 18
+17  LET sum = sum + 1
+18 END FOR
+19 END FOR
+20 END FOR
+21 EXIT sum

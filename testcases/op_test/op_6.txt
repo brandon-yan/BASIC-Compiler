@@ -1,0 +1,9 @@
+1 REM op_6.txt
+2 REM input: 8 6
+3 REM return value: 0
+4 INPUT a, b
+5 IF a >= b && a - 1 == b THEN 8
+6 LET c = b / a
+7 GOTO 9
+8 LET c = a * b
+9 EXIT c

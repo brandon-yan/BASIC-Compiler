@@ -1,0 +1,6 @@
+1 REM sema_7.txt
+2 REM input: 
+3 REM return value: FAIL
+4 LET a = 45
+5 LET b = a[0]
+6 EXIT b

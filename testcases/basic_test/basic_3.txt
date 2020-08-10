@@ -1,0 +1,6 @@
+1 REM basic_3.txt
+2 REM input: 4
+3 REM return value: 4
+4 INPUT inp
+5 GOTO 6
+6 EXIT inp

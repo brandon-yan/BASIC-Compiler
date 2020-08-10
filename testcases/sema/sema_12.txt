@@ -1,0 +1,6 @@
+1 REM sema_12.txt
+2 REM input: 3
+3 REM return value: 5
+4 INPUT a
+5 LET (a) = a + 2
+6 EXIT ((a))

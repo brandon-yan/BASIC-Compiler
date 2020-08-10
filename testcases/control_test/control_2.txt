@@ -1,0 +1,8 @@
+1 REM control_2.txt
+2 REM input: 6
+3 REM return value: 6
+5 INPUT n
+7 IF n > 5 THEN 11
+8 LET n = 5
+10 EXIT n
+11 GOTO 10

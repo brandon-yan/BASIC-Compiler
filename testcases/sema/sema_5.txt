@@ -1,0 +1,5 @@
+1 REM sema_5.txt
+2 REM input: 
+3 REM return value: FAIL
+4 LET LET = 5
+5 EXIT LET

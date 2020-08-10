@@ -1,0 +1,15 @@
+1 REM array_2.txt
+2 REM input: 20
+3 REM return value: 184
+4 INPUT n
+5 LET array = INT[n]
+6 LET i = 0
+7 FOR i = i + 1; i < n
+8 LET array[i] = i
+9 END FOR
+10 LET i = n - 1
+11 LET sum = 0
+12 FOR i = i - 1; i > 3
+13 LET sum =  sum + array[i]
+14 END FOR
+15 EXIT sum

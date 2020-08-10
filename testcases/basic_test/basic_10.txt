@@ -1,0 +1,6 @@
+1 REM basic_10.txt
+2 REM input: 5
+3 REM return value: 30
+4 INPUT n
+5 LET sum = n * n + n
+6 EXIT sum 

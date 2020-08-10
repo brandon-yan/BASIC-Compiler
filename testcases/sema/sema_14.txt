@@ -1,0 +1,8 @@
+1 REM sema_14.txt
+2 REM input: 
+3 REM return value: FAIL
+4 LET i = 0
+5 FOR i < 10; i = i + 1
+6 LET i = i + 2
+7 END FOR
+8 EXIT i

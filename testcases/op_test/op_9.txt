@@ -1,0 +1,11 @@
+1 REM op_9.txt
+2 REM input: 8 10
+3 REM return value: 4
+4 INPUT m,n
+5 IF m >= n THEN 8
+6 IF m < n - 2 || m == n - 2 THEN 10
+7 GOTO 9
+8 LET m = m - n
+9 EXIT m
+10 LET m = n + 2 - m
+11 GOTO 9

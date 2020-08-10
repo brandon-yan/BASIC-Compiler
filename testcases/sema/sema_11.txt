@@ -1,0 +1,7 @@
+1 REM sema_11.txt
+2 REM input: -9
+3 REM return value: 1
+4 LET N = (10)
+5 INPUT M
+6 LET N  = (M) + (N)
+7 EXIT N

@@ -1,0 +1,7 @@
+1 REM op_10.txt
+2 REM input: 7 8 2 3
+3 REM return value: 12
+4 INPUT m, n, p, q
+5 LET x = (m + n)/p + (m + n)/ q
+6 LET y = x * 2 - (m + n) * (p + q) / (p * q)
+7 EXIT y

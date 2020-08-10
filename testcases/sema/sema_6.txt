@@ -1,0 +1,6 @@
+1 REM sema_6.txt
+2 REM input: 
+3 REM return value: FAIL
+4 LET array = INT[45]
+5 LET array[45] = 34
+6 EXIT array[0]

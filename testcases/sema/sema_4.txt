@@ -1,0 +1,8 @@
+1 REM sema_4.txt
+2 REM input: 4 0
+3 REM return value: FAIL
+4 INPUT x, y
+5 REM I want to see operation
+6 LET true  = ((x + y)  * (x-  y)  * y  -  ((((x  - y) * (((y - x)))))))
+7 LET fail  =  (((((((x - y) * (((x +  y) / x)))))))
+8 EXIT true

@@ -1,0 +1,11 @@
+1 REM basic_9.txt
+2 REM input: 5
+3 REM return value: 6
+4 INPUT n
+5 LET i = 1
+6 LET sum = 0
+7 FOR i = i + 1; i < n
+8 IF i - 2 * (i / 2) != 0 THEN 7
+9 LET sum = sum + i
+10 END FOR
+11 EXIT sum

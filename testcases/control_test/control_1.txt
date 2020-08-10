@@ -1,0 +1,35 @@
+1 REM control_1.txt
+2 REM input: 13
+3 REM return value: 60480
+4 INPUT N
+5 LET h = 9
+6 LET i = 10
+7 LET j = 11
+8 LET k = 12
+9 LET total = 0
+10 LET a = 1
+11 LET b = 1
+12 LET c = 1
+13 LET d = 1
+14 LET e = 1
+15 LET f = 1
+16 FOR a = a + 1; a <= N
+17  LET b = 1
+18  FOR b = b + 1; b <= N
+19  LET c = 1
+20    FOR c = c + 1; c <= N
+21      LET d = 1
+22      FOR d = d + 1; d <= N
+23        LET e = 1
+24        FOR e = e + 1; e <= N
+25          LET f = 1
+26          FOR f = f + 1; f <= N
+27            IF (a==b || a==c ||  a==d ||  a==e ||  a==f ||  a==h ||  a==i ||  a==j ||  a==k ||  b==c ||  b==d ||  b==e ||  b==f ||  b==h ||  b==i ||  b==j ||  b==k ||  c==d ||  c==e ||  c==f ||  c==h ||  c==i ||  c==j ||  c==k ||  d==e ||  d==f ||  d==h ||  d==i ||  d==j ||  d==k ||  e==f ||  e==h ||  e==i ||  e==j ||  e==k ||  f==h ||  f==i ||  f==j ||  f==k ||  i==j ||  h==k) THEN 29
+28            LET total = total + 1
+29          END FOR
+30        END FOR
+31      END FOR 
+32    END FOR
+33  END FOR
+34 END FOR
+35 EXIT total

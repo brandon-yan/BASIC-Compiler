@@ -1,0 +1,9 @@
+1 REM op_7.txt
+2 REM input: 10
+3 REM return value: 4
+4 INPUT n 
+5 LET i = 1
+6 FOR i = i + 1; i < n
+7 LET n = n - i
+8 END FOR
+9 EXIT n

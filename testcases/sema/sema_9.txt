@@ -1,0 +1,5 @@
+1 REM sema_9.txt
+2 REM input: 
+3 REM return value: FAIL
+4 INPUT m, n
+5 EXIT 

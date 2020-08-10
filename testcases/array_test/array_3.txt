@@ -1,0 +1,22 @@
+1 REM array_3.txt
+2 REM input: 10 21 34 11 8 15 24 13 9 45 67
+3 REM return value: 8
+4 INPUT N
+5 LET n = N - 1
+6 LET sort = INT[N]
+7 LET i = 0
+8 FOR i = i + 1; i <= n
+9 INPUT sort[i]
+10 END FOR
+11 LET i = 0
+12 LET j = 0
+13 FOR i = i + 1; i < N
+14 LET j = n
+15 FOR j = j - 1; j > i
+16 IF sort[j] <= sort[j - 1] THEN 20
+17 LET tmp = sort[j]
+18 LET sort[j] = sort[j - 1]
+19 LET sort[j - 1]  = tmp
+20 END FOR
+21 END FOR
+22 EXIT sort[n]

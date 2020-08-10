@@ -1,0 +1,10 @@
+1 REM op_5.txt
+2 REM input: 4 6
+3 REM return value: 19
+4 INPUT n, m
+5 LET i = 0
+6 LET sum = 0
+7 FOR i = i + 1; (i <= 5) && (i < n * (n * m - m) - n * m - n)
+8 LET sum = sum + i * i
+9 END FOR
+10 EXIT sum - (i * 6)

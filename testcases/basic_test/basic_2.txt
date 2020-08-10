@@ -1,0 +1,5 @@
+1 REM basic_2.txt
+2 REM input: 5
+3 REM return value: 5
+4 INPUT a
+5 EXIT a

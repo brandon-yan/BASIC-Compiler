@@ -1,0 +1,6 @@
+1 REM basic_4.txt 
+2 REM input: 2 
+3 REM return value:3
+4 INPUT var
+5 LET var = var + 1
+6 EXIT var

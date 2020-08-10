@@ -1,0 +1,17 @@
+1 REM array_4.txt
+2 REM input: 6 6 5 4
+3 REM return value: 126
+4 INPUT n, m
+5 LET matrix = INT[n][m]
+6 LET i = 0
+7 FOR i = i + 1; i < n
+8 LET j = 0
+9 FOR j = j + 1; j < m
+10 IF i == 0 || j == 0 THEN 13
+11 LET matrix[i][j] = matrix[i - 1][j] + matrix[i][j - 1]
+12 GOTO 14
+13 LET matrix[i][j] = 1
+14 END FOR
+15 END FOR
+16 INPUT x, y
+17 EXIT matrix[x][y]

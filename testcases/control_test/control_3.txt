@@ -1,0 +1,14 @@
+1 REM control_3.txt
+2 REM input: 10 5
+3 REM return value: 0
+4 INPUT m,n
+5 FOR m = m - (m / n) * n; n > 0
+6 IF m >= n THEN 10
+7 LET tmp = m
+8 LET m = n
+9 LET n = tmp
+10 IF n == 0 THEN 14
+11 END FOR
+12 EXIT m
+14 LET n = -1
+15 GOTO 11

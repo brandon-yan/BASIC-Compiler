@@ -1,0 +1,9 @@
+1 REM basic_7.txt
+2 REM input: 5 3
+3 REM return value: 3
+4 INPUT a,b
+5 IF a > b THEN 8
+6 LET c = a
+7 GOTO 9
+8 LET c = b
+9 EXIT c

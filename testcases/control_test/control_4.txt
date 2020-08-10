@@ -1,0 +1,17 @@
+1 REM control_4.txt
+2 REM input: 5
+3 REM return value: 16
+4 INPUT n
+5 GOTO 9
+6 GOTO 12
+7 LET n = (n * 8) + n / 4
+8 GOTO 11
+9 LET n = n * 2 + 1
+10 GOTO 6
+11 GOTO 16
+12 LET n = (n - 6) / 2 
+13 IF n == 2 THEN 7
+14 EXIT 24
+16 IF n <= 10 THEN 21
+20 EXIT n
+21 EXIT n - 10

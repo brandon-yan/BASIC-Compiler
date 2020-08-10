@@ -1,0 +1,8 @@
+1 REM sema_2.txt
+2 REM input: 4 0
+3 REM return value: 4
+4 INPUT n, m
+5 IF n >= 0 || n / m != 1 THEN
+6 EXIT 6
+7 EXIT n + m
+8 REM Short circuit evaluation

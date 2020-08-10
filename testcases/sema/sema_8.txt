@@ -1,0 +1,14 @@
+1 REM sema_8.txt
+2 REM input: 10
+3 REM return value: 1
+4 INPUT m
+5 LET n = INT[m]
+6 LET n[3 * 3] =  2
+7 LET tmp = INT[n[9]]
+8 LET i = 0
+9 FOR i = i + 1; i < n[9]
+10 IF i % 2 == 0 THEN 12
+11 LET n[i] = i
+12 END FOR
+13 LET n[0] = 9
+14 EXIT n[1]
