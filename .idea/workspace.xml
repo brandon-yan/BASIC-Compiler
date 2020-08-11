@@ -12,7 +12,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2006a482-453a-48d6-a4e0-f5e69109206c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CFG.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/CFG.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/BASIC_Compiler.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/BASIC_Compiler.exe" afterDir="false" />
@@ -83,7 +82,7 @@
       <workItem from="1596676934905" duration="5323000" />
       <workItem from="1596704521571" duration="13000" />
       <workItem from="1596763007449" duration="15459000" />
-      <workItem from="1597020837725" duration="26609000" />
+      <workItem from="1597020837725" duration="35724000" />
     </task>
     <servers />
   </component>
@@ -99,38 +98,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="406" y="179" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1597024869325" />
-    <state width="1493" height="276" key="GridCell.Tab.0.bottom" timestamp="1597116640478">
+    <state width="1160" height="266" key="GridCell.Tab.0.bottom" timestamp="1597136050651">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="276" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597116640478" />
-    <state width="1493" height="276" key="GridCell.Tab.0.center" timestamp="1597116640478">
+    <state width="1160" height="266" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597136050651" />
+    <state width="1160" height="266" key="GridCell.Tab.0.center" timestamp="1597136050651">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="276" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1597116640478" />
-    <state width="1493" height="276" key="GridCell.Tab.0.left" timestamp="1597116640478">
+    <state width="1160" height="266" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1597136050651" />
+    <state width="1160" height="266" key="GridCell.Tab.0.left" timestamp="1597136050651">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="276" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1597116640478" />
-    <state width="1493" height="276" key="GridCell.Tab.0.right" timestamp="1597116640478">
+    <state width="1160" height="266" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1597136050651" />
+    <state width="1160" height="266" key="GridCell.Tab.0.right" timestamp="1597136050651">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="276" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1597116640478" />
-    <state width="1160" height="6" key="GridCell.Tab.1.bottom" timestamp="1597113146595">
+    <state width="1160" height="266" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1597136050651" />
+    <state width="1160" height="241" key="GridCell.Tab.1.bottom" timestamp="1597135447603">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1160" height="6" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597113146595" />
-    <state width="1160" height="6" key="GridCell.Tab.1.center" timestamp="1597113146594">
+    <state width="1160" height="241" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597135447603" />
+    <state width="1160" height="241" key="GridCell.Tab.1.center" timestamp="1597135447602">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1160" height="6" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1597113146594" />
-    <state width="1160" height="6" key="GridCell.Tab.1.left" timestamp="1597113146594">
+    <state width="1160" height="241" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1597135447602" />
+    <state width="1160" height="241" key="GridCell.Tab.1.left" timestamp="1597135447601">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1160" height="6" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1597113146594" />
-    <state width="1160" height="6" key="GridCell.Tab.1.right" timestamp="1597113146594">
+    <state width="1160" height="241" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1597135447601" />
+    <state width="1160" height="241" key="GridCell.Tab.1.right" timestamp="1597135447602">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1160" height="6" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1597113146594" />
+    <state width="1160" height="241" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1597135447602" />
     <state width="608" height="439" key="XDebugger.FullValuePopup" timestamp="1596180491587">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -145,20 +144,6 @@
     <state x="432" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1595822030312" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>24</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/CFG.hpp</url>
-          <line>567</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
         <watch expression="blocks" language="ObjectiveC" />
@@ -166,6 +151,7 @@
         <watch expression="line_addr" language="ObjectiveC" />
         <watch expression="addr" language="ObjectiveC" />
         <watch expression="id_addr" language="ObjectiveC" />
+        <watch expression="name_regi" language="ObjectiveC" />
         <watch expression="idaddr" language="ObjectiveC" />
       </configuration>
     </watches-manager>

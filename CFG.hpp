@@ -129,10 +129,18 @@
         for (int i = 0; i < obj->forlines.size(); ++i) {
             auto tmpline = obj->suites[obj->forlines[i]];
             if (tmpline->goto_stmt != nullptr) {
-                tmpcode tmp(JAL, tmpline->goto_stmt->towhere, obj->forlines[i]);
-                blocks.back().codes.push_back(tmp);
-                block newblock;
-                blocks.push_back(newblock);
+                if (tmpline->goto_stmt->towhere == line) {
+                    tmpcode tmp(JAL, afterend - 1, obj->forlines[i]);
+                    blocks.back().codes.push_back(tmp);
+                    block newblock;
+                    blocks.push_back(newblock);
+                }
+                else {
+                    tmpcode tmp(JAL, tmpline->goto_stmt->towhere, obj->forlines[i]);
+                    blocks.back().codes.push_back(tmp);
+                    block newblock;
+                    blocks.push_back(newblock);
+                }
             }
             else if (tmpline->input_stmt != nullptr) {
                 for (int j = 0; j < tmpline->input_stmt->putthings.size(); ++j) {
@@ -157,10 +165,18 @@
             else if (tmpline->if_stmt != nullptr) {
                 std::string ifexpr = exprcfg(tmpline->if_stmt->ifexpr, obj->forlines[i]);
                 int towhere = tmpline->if_stmt->towhere;
-                tmpcode tmp(BNE, ifexpr, "0", towhere, obj->forlines[i]);
-                blocks.back().codes.push_back(tmp);
-                block newblock;
-                blocks.push_back(newblock);
+                if (towhere == line) {
+                    tmpcode tmp(BNE, ifexpr, "0", afterend - 1, obj->forlines[i]);
+                    blocks.back().codes.push_back(tmp);
+                    block newblock;
+                    blocks.push_back(newblock);
+                }
+                else {
+                    tmpcode tmp(BNE, ifexpr, "0", towhere, obj->forlines[i]);
+                    blocks.back().codes.push_back(tmp);
+                    block newblock;
+                    blocks.push_back(newblock);
+                }
             }
             else if (tmpline->for_stmt != nullptr) {
                 forcfg(tmpline->for_stmt, pro, par, obj->forlines[i]);
@@ -201,10 +217,10 @@
             else if (tmpline->input_stmt != nullptr) {
                 for (int j = 0; j < tmpline->input_stmt->putthings.size(); ++j) {
                     int put = 1;
-                    if (j == 0) put = 7;
-                    if (j == 1) put = 8;
-                    if (j == 2) put = 2;
-                    if (j == 3) put = 3;
+                    if (j == 0) put = 8;
+                    if (j == 1) put = 10;
+//                    if (j == 2) put = 2;
+//                    if (j == 3) put = 3;
                     //std::cin >> put;
                     tmpcode tmp(STORE, tmpline->input_stmt->putthings[j]->idname, put, proo.lines[i]);
                     blocks.back().codes.push_back(tmp);
@@ -590,18 +606,18 @@
                     break;
                 case LOAD:
                     if (line_addr.count(cur.line) == 0) line_addr[cur.line] = addr;
+                    if (name_regi[cur.rd] == 0) {
+
+                    }
                     for (int i = 11; i <= 32; ++i)
                         if (regiused[i] == false) {
                             rd = i;
                             name_regi[cur.rd] = i;
-                            name_used[cur.rd] = false;
                             regiused[i] = true;
                             break;
                         }
                     instructions.push_back(std::make_pair(lui(2, id_addr[cur.rd]), cur));
                     instructions.push_back(std::make_pair(lw(rd, 2, id_addr[cur.rd]), cur));
-                    //id_addr[cur.rd] = idaddr;
-                    //idaddr += 4;
                     break;
                 case ADDI:
                     if (line_addr.count(cur.line) == 0) line_addr[cur.line] = addr;
@@ -630,7 +646,10 @@
                         regiused[name_regi[cur.rs1]] = false;
                         regiused[name_regi[cur.rs2]] = false;
                     }
-                    if (cur.rd == "x10") instructions.push_back(std::make_pair(0xff00513, cur));
+                    if (cur.rd == "x10") {
+                        instructions.push_back(std::make_pair(0xff00513, cur));
+                        addr += 4;
+                    }
                     break;
                 case SUBI:
                     if (line_addr.count(cur.line) == 0) line_addr[cur.line] = addr;
