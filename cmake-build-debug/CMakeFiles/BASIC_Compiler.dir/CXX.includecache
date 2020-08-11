@@ -43,6 +43,8 @@ string
 C:/Users/hanchong/CLionProjects/BASIC_Compiler/main.cpp
 iostream
 -
+cstdio
+-
 lexer.hpp
 C:/Users/hanchong/CLionProjects/BASIC_Compiler/lexer.hpp
 ASTnode.hpp

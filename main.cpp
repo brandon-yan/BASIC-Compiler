@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdio>
 #include "lexer.hpp"
 #include "ASTnode.hpp"
 #include "parser.hpp"
@@ -6,7 +7,7 @@
 
 
 int main() {
-    freopen("C:\\Users\\hanchong\\Desktop\\BASIC-Compiler-master\\testcases\\basic_test\\basic_4.txt", "r", stdin);
+    freopen("C:\\Users\\hanchong\\Desktop\\BASIC-Compiler-master\\testcases\\op_test\\op_10.txt", "r", stdin);
     Lexer lexer(std::cin);
     std::vector<Token> tokens;
     tokens = lexer.getTokens();
@@ -22,8 +23,9 @@ int main() {
     gen_code();
     std::cout << "@00000000" << std::endl;
     for (int i = 0; i < instructions.size(); ++i) {
-        int bin = 0xff;
-        printf("%02X %02X %02X %02X ", instructions[i].first & bin, (instructions[i].first & (bin << 8)) >> 8, (instructions[i].first & (bin << 16)) >> 16, (instructions[i].first & (bin << 24)) >> 24);
+        unsigned int bin = 0xff;
+        unsigned int code = instructions[i].first;
+        printf("%02X %02X %02X %02X ", code & bin, (code & (bin << 8)) >> 8, (code & (bin << 16)) >> 16, (code & (bin << 24)) >> 24);
     }
     //    std::cout << instructions[i].first << std::endl;
 }

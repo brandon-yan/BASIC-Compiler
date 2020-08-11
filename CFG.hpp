@@ -119,11 +119,11 @@
         block newblock;
         blocks.push_back(newblock);
         std::string forexpr = exprcfg(obj->ifcontinue, line);
-        std::string afterend;
+        int afterend = 0;
         int forbegin = 0;
         for (int i = 0; i < par.for_end_pair.size(); ++i)
             if (par.for_end_pair[i].first == line)
-                afterend = std::to_string(par.for_end_pair[i].second + 1);
+                afterend = par.for_end_pair[i].second + 1;
         tmpcode tmp(BEQ, forexpr, "0", afterend, line);
         blocks.back().codes.push_back(tmp);
         for (int i = 0; i < obj->forlines.size(); ++i) {
@@ -199,10 +199,14 @@
                 blocks.push_back(newblock);
             }
             else if (tmpline->input_stmt != nullptr) {
-                for (int i = 0; i < tmpline->input_stmt->putthings.size(); ++i) {
-                    int put = 2;
+                for (int j = 0; j < tmpline->input_stmt->putthings.size(); ++j) {
+                    int put = 1;
+                    if (j == 0) put = 7;
+                    if (j == 1) put = 8;
+                    if (j == 2) put = 2;
+                    if (j == 3) put = 3;
                     //std::cin >> put;
-                    tmpcode tmp(STORE, tmpline->input_stmt->putthings[i]->idname, put, proo.lines[i]);
+                    tmpcode tmp(STORE, tmpline->input_stmt->putthings[j]->idname, put, proo.lines[i]);
                     blocks.back().codes.push_back(tmp);
                 }
             }
@@ -281,7 +285,7 @@
                         blocks[i].codes.insert(blocks[i].codes.begin() + j, t1);
                         ++count;
                     }
-                    else if (!ifnum(tmp.rs2) && !iftmp(tmp.rs2) && (tmp.rs2 != tmp.rs1)) {
+                    if (!ifnum(tmp.rs2) && !iftmp(tmp.rs2) && (tmp.rs2 != tmp.rs1)) {
                         tmpcode t2(LOAD, tmp.rs2, tmp.line);
                         blocks[i].codes.insert(blocks[i].codes.begin() + j, t2);
                         ++count;
@@ -529,6 +533,8 @@
         return ret;
     }
     int jal(int rd, int offset) {
+//        int ret = ((offset & 0x7fe) << 20) | (((offset>> 20) & 1) << 31) | (((offset >> 11) & 1) << 20) | (((offset >> 12) & 0xff) << 12) | 0b1101111;
+//        return ret;
         int ret = get_num(offset, 20, 20);
         ret <<= 10;
         ret += get_num(offset, 1, 10);
@@ -542,9 +548,20 @@
         ret += 111;
         return ret;
     }
+    int lui(int rd, int imm) {
+        addr += 4;
+        int ret = ((imm >> 12) << 12) | (rd << 7) | 0b0110111;
+//        int ret = get_num(imm, 0, 19);
+//        ret <<= 5;
+//        ret += rd;
+//        ret <<= 7;
+//        ret += 55;
+        return ret;
+    }
 
     //变量-load/store，立即数+I
     void gen_code() {
+        name_regi["0"] = 0;
         int rd = 0;
         for(int i = 0; i < blocks.size(); ++i) for (int j = 0; j < blocks[i].codes.size(); ++j) {
             tmpcode cur = blocks[i].codes[j];
@@ -554,17 +571,22 @@
                     if(id_addr.count(cur.rd) == 0) {
                         if(name_regi.count(cur.rd) == 0) {
                             instructions.push_back(std::make_pair(addi(1, 0, cur.num), cur));
-                            instructions.push_back(std::make_pair(sw(0, 1, idaddr), cur));
+                            instructions.push_back(std::make_pair(lui(2, idaddr), cur));
+                            instructions.push_back(std::make_pair(sw(2, 1, idaddr), cur));
                             id_addr[cur.rd] = idaddr;
                             idaddr += 4;
                         }
                         else {
-                            instructions.push_back(std::make_pair(sw(0, name_regi[cur.rd], idaddr), cur));
+                            instructions.push_back(std::make_pair(lui(2, idaddr), cur));
+                            instructions.push_back(std::make_pair(sw(2, name_regi[cur.rd], idaddr), cur));
                             id_addr[cur.rd] = idaddr;
                             idaddr += 4;
                         }
                     }
-                    else instructions.push_back(std::make_pair(sw(0, name_regi[cur.rd], id_addr[cur.rd]), cur));
+                    else {
+                        instructions.push_back(std::make_pair(lui(2, id_addr[cur.rd]), cur));
+                        instructions.push_back(std::make_pair(sw(2, name_regi[cur.rd], id_addr[cur.rd]), cur));
+                    }
                     break;
                 case LOAD:
                     if (line_addr.count(cur.line) == 0) line_addr[cur.line] = addr;
@@ -576,7 +598,8 @@
                             regiused[i] = true;
                             break;
                         }
-                    instructions.push_back(std::make_pair(lw(rd, 0, id_addr[cur.rd]), cur));
+                    instructions.push_back(std::make_pair(lui(2, id_addr[cur.rd]), cur));
+                    instructions.push_back(std::make_pair(lw(rd, 2, id_addr[cur.rd]), cur));
                     //id_addr[cur.rd] = idaddr;
                     //idaddr += 4;
                     break;
@@ -655,16 +678,16 @@
                     }
                     else if (ifnum(cur.rs1)) {
                         instructions.push_back(std::make_pair(addi(5, 0, stoi(cur.rs1)), cur));
-                        instructions.push_back(std::make_pair(sub(rd, 5, name_regi[cur.rs2]), cur));
+                        instructions.push_back(std::make_pair(mul(rd, 5, name_regi[cur.rs2]), cur));
                         regiused[name_regi[cur.rs2]] = false;
                     }
                     else if (ifnum(cur.rs2)) {
                         instructions.push_back(std::make_pair(addi(6, 0, stoi(cur.rs2)), cur));
-                        instructions.push_back(std::make_pair(sub(rd, name_regi[cur.rs1], 6), cur));
+                        instructions.push_back(std::make_pair(mul(rd, name_regi[cur.rs1], 6), cur));
                         regiused[name_regi[cur.rs1]] = false;
                     }
                     else {
-                        instructions.push_back(std::make_pair(sub(rd, name_regi[cur.rs1], name_regi[cur.rs2]), cur));
+                        instructions.push_back(std::make_pair(mul(rd, name_regi[cur.rs1], name_regi[cur.rs2]), cur));
                         regiused[name_regi[cur.rs1]] = false;
                         regiused[name_regi[cur.rs2]] = false;
                     }
