@@ -15,8 +15,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CFG.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/CFG.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/BASIC_Compiler.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/BASIC_Compiler.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BASIC_Compiler.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BASIC_Compiler.dir/main.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BASIC_Compiler.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BASIC_Compiler.dir/objects.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +40,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../RISC-V simulator" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -82,7 +80,8 @@
       <workItem from="1596676934905" duration="5323000" />
       <workItem from="1596704521571" duration="13000" />
       <workItem from="1596763007449" duration="15459000" />
-      <workItem from="1597020837725" duration="35724000" />
+      <workItem from="1597020837725" duration="36490000" />
+      <workItem from="1597195394694" duration="2983000" />
     </task>
     <servers />
   </component>
@@ -98,38 +97,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="406" y="179" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1597024869325" />
-    <state width="1160" height="266" key="GridCell.Tab.0.bottom" timestamp="1597136050651">
+    <state width="1160" height="294" key="GridCell.Tab.0.bottom" timestamp="1597198998430">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1160" height="266" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597136050651" />
-    <state width="1160" height="266" key="GridCell.Tab.0.center" timestamp="1597136050651">
+    <state width="1160" height="294" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597198998430" />
+    <state width="1160" height="294" key="GridCell.Tab.0.center" timestamp="1597198998429">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1160" height="266" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1597136050651" />
-    <state width="1160" height="266" key="GridCell.Tab.0.left" timestamp="1597136050651">
+    <state width="1160" height="294" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1597198998429" />
+    <state width="1160" height="294" key="GridCell.Tab.0.left" timestamp="1597198998429">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1160" height="266" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1597136050651" />
-    <state width="1160" height="266" key="GridCell.Tab.0.right" timestamp="1597136050651">
+    <state width="1160" height="294" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1597198998429" />
+    <state width="1160" height="294" key="GridCell.Tab.0.right" timestamp="1597198998429">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1160" height="266" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1597136050651" />
-    <state width="1160" height="241" key="GridCell.Tab.1.bottom" timestamp="1597135447603">
+    <state width="1160" height="294" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1597198998429" />
+    <state width="1160" height="234" key="GridCell.Tab.1.bottom" timestamp="1597198847001">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1160" height="241" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597135447603" />
-    <state width="1160" height="241" key="GridCell.Tab.1.center" timestamp="1597135447602">
+    <state width="1160" height="234" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597198847001" />
+    <state width="1160" height="234" key="GridCell.Tab.1.center" timestamp="1597198847001">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1160" height="241" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1597135447602" />
-    <state width="1160" height="241" key="GridCell.Tab.1.left" timestamp="1597135447601">
+    <state width="1160" height="234" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1597198847001" />
+    <state width="1160" height="234" key="GridCell.Tab.1.left" timestamp="1597198847001">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1160" height="241" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1597135447601" />
-    <state width="1160" height="241" key="GridCell.Tab.1.right" timestamp="1597135447602">
+    <state width="1160" height="234" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1597198847001" />
+    <state width="1160" height="234" key="GridCell.Tab.1.right" timestamp="1597198847001">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1160" height="241" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1597135447602" />
+    <state width="1160" height="234" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1597198847001" />
     <state width="608" height="439" key="XDebugger.FullValuePopup" timestamp="1596180491587">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

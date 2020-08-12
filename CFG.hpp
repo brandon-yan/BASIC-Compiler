@@ -217,8 +217,8 @@
             else if (tmpline->input_stmt != nullptr) {
                 for (int j = 0; j < tmpline->input_stmt->putthings.size(); ++j) {
                     int put = 1;
-                    if (j == 0) put = 8;
-                    if (j == 1) put = 10;
+                    if (j == 0) put = 13;
+                    if (j == 1) put = 5;
 //                    if (j == 2) put = 2;
 //                    if (j == 3) put = 3;
                     //std::cin >> put;
@@ -276,7 +276,13 @@
         return (ret == "tmp");
     }
     bool ifnum(std::string regname) {
-        for (int i = 0; i < regname.size(); ++i) {
+        if (regname[0] == '-') {
+            for (int i = 1; i < regname.size(); ++i) {
+                if (std::isdigit(regname[i])) continue;
+                else return false;
+            }
+        }
+        else for (int i = 0; i < regname.size(); ++i) {
             if (std::isdigit(regname[i])) continue;
             else return false;
         }
