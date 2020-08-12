@@ -151,13 +151,13 @@
                 }
             }
             else if (tmpline->vardecl_stmt != nullptr) {
-                std::string lval = tmpline->vardecl_stmt->lvalue->idname;
+                std::string lval = tmpline->vardecl_stmt->lvalue->atom->idname;
                 std::string rval = exprcfg(tmpline->vardecl_stmt->rvalue, obj->forlines[i]);
                 tmpcode tmp(ADDI, lval, rval, "0", obj->forlines[i]);
                 blocks.back().codes.push_back(tmp);
             }
             else if (tmpline->expr_stmt != nullptr) {
-                std::string lval = tmpline->vardecl_stmt->lvalue->idname;
+                std::string lval = tmpline->vardecl_stmt->lvalue->atom->idname;
                 std::string rval = exprcfg(tmpline->vardecl_stmt->rvalue, obj->forlines[i]);
                 tmpcode tmp(ADDI, lval, rval, "0", obj->forlines[i]);
                 blocks.back().codes.push_back(tmp);
@@ -188,7 +188,7 @@
                 blocks.back().codes.push_back(tmp);
             }
             else if (tmpline->END != nullptr) {
-                std::string lval = obj->forstmt->lvalue->idname;
+                std::string lval = obj->forstmt->lvalue->atom->idname;
                 std::string rval = exprcfg(obj->forstmt->rvalue, obj->forlines[i]);
                 tmpcode tmp1(ADDI, lval, rval, "0", obj->forlines[i]);
                 blocks.back().codes.push_back(tmp1);
@@ -217,8 +217,8 @@
             else if (tmpline->input_stmt != nullptr) {
                 for (int j = 0; j < tmpline->input_stmt->putthings.size(); ++j) {
                     int put = 1;
-                    if (j == 0) put = 13;
-                    if (j == 1) put = 5;
+                    if (j == 0) put = 5;
+                    if (j == 1) put = 1;
 //                    if (j == 2) put = 2;
 //                    if (j == 3) put = 3;
                     //std::cin >> put;
@@ -227,13 +227,13 @@
                 }
             }
             else if (tmpline->vardecl_stmt != nullptr) {
-                std::string lval = tmpline->vardecl_stmt->lvalue->idname;
+                std::string lval = tmpline->vardecl_stmt->lvalue->atom->idname;
                 std::string rval = exprcfg(tmpline->vardecl_stmt->rvalue, proo.lines[i]);
                 tmpcode tmp(ADDI, lval, rval, "0", proo.lines[i]);
                 blocks.back().codes.push_back(tmp);
             }
             else if (tmpline->expr_stmt != nullptr) {
-                std::string lval = tmpline->vardecl_stmt->lvalue->idname;
+                std::string lval = tmpline->vardecl_stmt->lvalue->atom->idname;
                 std::string rval = exprcfg(tmpline->vardecl_stmt->rvalue, proo.lines[i]);
                 tmpcode tmp(ADDI, lval, rval, "0", proo.lines[i]);
                 blocks.back().codes.push_back(tmp);
@@ -555,8 +555,6 @@
         return ret;
     }
     int jal(int rd, int offset) {
-//        int ret = ((offset & 0x7fe) << 20) | (((offset>> 20) & 1) << 31) | (((offset >> 11) & 1) << 20) | (((offset >> 12) & 0xff) << 12) | 0b1101111;
-//        return ret;
         int ret = get_num(offset, 20, 20);
         ret <<= 10;
         ret += get_num(offset, 1, 10);
@@ -582,7 +580,7 @@
     }
 
     //变量-load/store，立即数+I
-    void gen_code() {
+    void gen_code(Program &proo) {
         name_regi["0"] = 0;
         int rd = 0;
         for(int i = 0; i < blocks.size(); ++i) for (int j = 0; j < blocks[i].codes.size(); ++j) {
@@ -974,7 +972,19 @@
             }
         }
         for (int i = 0; i < instructions.size(); ++i) {
-            int jumpaddr = line_addr[instructions[i].second.num] - instructions[i].second.addr;
+            int jumpaddr = 0;
+            if (instructions[i].second.co == JAL || instructions[i].second.co == BEQ || instructions[i].second.co == BNE) {
+                if(line_addr.count(instructions[i].second.num))
+                    jumpaddr = line_addr[instructions[i].second.num] - instructions[i].second.addr;
+                else {
+                    int lineend = proo.lines.back();
+                    for (int i = instructions[i].second.num + 1; i <= lineend; ++i) {
+                        if(line_addr.count(i))
+                            jumpaddr = line_addr[i] - instructions[i].second.addr;
+                    }
+                }
+                if (jumpaddr == 0) jumpaddr += 4;
+            }
             switch (instructions[i].second.co) {
                 case JAL:
                     instructions[i].first = jal(1, jumpaddr);

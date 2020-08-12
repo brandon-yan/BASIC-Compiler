@@ -42,22 +42,6 @@ private:
 public:
     Lexer(std::istream &_is):is(_is) {}
     Token getnextToken() {
-//        if (lastchar == ')') {
-//            lastchar = ' ';
-//            return Token(RPAREN);
-//        }
-//        else if (lastchar == ']') {
-//            lastchar = ' ';
-//            return Token(RSQUARE);
-//        }
-//        else if (lastchar == ';') {
-//            lastchar = ' ';
-//            return Token(SEMICOLON);
-//        }
-//        else if (lastchar == ',') {
-//            lastchar = ' ';
-//            return Token(COMMA);
-//        }
         lastchar = ' ';
         std::string tmpname;
         std::string tmpvalue;
@@ -86,6 +70,10 @@ public:
                 do lastchar = getchar();
                 while (lastchar != EOF && lastchar != '\n' && lastchar != '\r');
                 if (lastchar != EOF) return Token(REM);
+                else {
+                    std::cin.putback(lastchar);
+                    return Token(REM);
+                }
             }
             else return Token(ID, tmpname);
         }

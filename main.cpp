@@ -7,8 +7,8 @@
 
 
 int main() {
-    freopen("C:\\Users\\hanchong\\Desktop\\BASIC-Compiler-master\\testcases\\control_test\\control_1.txt", "r", stdin);
-    //freopen("C:\\Users\\hanchong\\Desktop\\TEST\\test.txt", "w", stdout);
+    freopen("C:\\Users\\hanchong\\Desktop\\BASIC-Compiler-master\\testcases\\control_test\\control_5.txt", "r", stdin);
+    freopen("C:\\Users\\hanchong\\Desktop\\TEST\\test.txt", "w", stdout);
     Lexer lexer(std::cin);
     std::vector<Token> tokens;
     tokens = lexer.getTokens();
@@ -18,10 +18,10 @@ int main() {
     Program pro = parser.program_parse();
     CFG(pro, parser);
     loadstore();
-    for(int i = 0; i < blocks.size(); ++i)
-        for (int j = 0; j < blocks[i].codes.size(); ++j)
-            std::cout << blocks[i].codes[j].line << " " << blocks[i].codes[j].co << ' ' << blocks[i].codes[j].rd << " " << blocks[i].codes[j].rs1 << " " << blocks[i].codes[j].rs2 << " " << blocks[i].codes[j].num << std::endl;
-    gen_code();
+//    for(int i = 0; i < blocks.size(); ++i)
+//        for (int j = 0; j < blocks[i].codes.size(); ++j)
+//            std::cout << blocks[i].codes[j].line << " " << blocks[i].codes[j].co << ' ' << blocks[i].codes[j].rd << " " << blocks[i].codes[j].rs1 << " " << blocks[i].codes[j].rs2 << " " << blocks[i].codes[j].num << std::endl;
+    gen_code(pro);
     std::cout << "@00000000" << std::endl;
     for (int i = 0; i < instructions.size(); ++i) {
         unsigned int bin = 0xff;

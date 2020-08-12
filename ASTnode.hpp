@@ -91,16 +91,16 @@ public:
 
 class VarDeclStmt {
 public:
-    std::shared_ptr<Atom> lvalue = nullptr;
+    std::shared_ptr<Expression> lvalue = nullptr;
     std::shared_ptr<Expression> rvalue = nullptr;
-    VarDeclStmt(std::shared_ptr<Atom> obj1, std::shared_ptr<Expression> obj2): lvalue(std::move(obj1)), rvalue(std::move(obj2)){};
+    VarDeclStmt(std::shared_ptr<Expression> obj1, std::shared_ptr<Expression> obj2): lvalue(obj1), rvalue(obj2){};
 };
 
 class ExprStmt {
 public:
-    std::shared_ptr<Atom> lvalue = nullptr;
+    std::shared_ptr<Expression> lvalue = nullptr;
     std::shared_ptr<Expression> rvalue = nullptr;
-    ExprStmt(std::shared_ptr<Atom> obj1, std::shared_ptr<Expression> obj2): lvalue(std::move(obj1)), rvalue(std::move(obj2)){};
+    ExprStmt(std::shared_ptr<Expression> obj1, std::shared_ptr<Expression> obj2): lvalue(std::move(obj1)), rvalue(std::move(obj2)){};
 };
 
 class IfStmt {
